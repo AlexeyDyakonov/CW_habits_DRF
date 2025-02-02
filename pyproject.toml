@@ -16,6 +16,11 @@ celery = "^5.4.0"
 django-celery-beat = "^2.7.0"
 redis = "^5.2.1"
 drf-yasg = "^1.21.8"
+rest-framework-simplejwt = "^0.0.2"
+djangorestframework-simplejwt = "^5.4.0"
+requests = "^2.32.3"
+django-cors-headers = "^4.6.0"
+black = "^25.1.0"
 
 
 [build-system]
