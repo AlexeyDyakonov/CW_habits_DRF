@@ -1,3 +1,4 @@
+from rest_framework.generics import ListAPIView
 from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import ModelViewSet
 
@@ -30,3 +31,9 @@ class HabitViewSet(ModelViewSet):
         elif self.action == "destroy":
             self.permission_classes = (~IsModer | IsOwner,)
         return super().get_permissions()
+
+class PublicHabitListAPIView(ListAPIView):
+    """ViewSet списка публичных привычек"""
+    serializer_class = HabitSerializer
+    queryset = Habit.objects.filter(is_published=True)
+    pagination_class = HabitPaginator

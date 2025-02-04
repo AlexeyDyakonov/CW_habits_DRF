@@ -72,7 +72,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("NAME"),
-        "USER": os.getenv("USER"),
+        "USER": 'postgres',
         "PASSWORD": os.getenv("PASSWORD"),
         "HOST": os.getenv("POSTGRES_HOST"),
         "PORT": os.getenv("POSTGRES_PORT"),
@@ -142,3 +142,13 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 TELEGRAM_URL = "https://api.telegram.org/bot"
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
+]
